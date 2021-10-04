@@ -16,7 +16,7 @@ public class Web : MonoBehaviour
         form.AddField("loginUser",username);
         form.AddField("loginPass", password);
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/UnityAxo/date.php", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/UnityAxo/login.php", form))
         {
             yield return www.SendWebRequest();
 
@@ -27,6 +27,23 @@ public class Web : MonoBehaviour
             else
             {
                 Debug.Log(www.downloadHandler.text);
+                if (www.downloadHandler.text == "0")
+                {
+                    main.Instance.Displaywarn.ExitWarns();
+                    Debug.Log(username);
+                }
+
+                if (www.downloadHandler.text == "1")
+                {
+                    main.Instance.Displaywarn.ExitWarns();
+                    main.Instance.Displaywarn.LogPassWarn();
+                }
+
+                if (www.downloadHandler.text == "2")
+                {
+                    main.Instance.Displaywarn.ExitWarns();
+                    main.Instance.Displaywarn.LogUsearWarn();
+                }
             }
 
         }
