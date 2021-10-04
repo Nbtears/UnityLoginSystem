@@ -71,7 +71,12 @@ public class Web : MonoBehaviour
             }
             else
             {
+                main.Instance.Displaywarn.ExitWarns();
                 Debug.Log(www.downloadHandler.text);
+                if (www.downloadHandler.text == "1")
+                {
+                    main.Instance.Displaywarn.Usertaken();
+                }
             }
 
         }

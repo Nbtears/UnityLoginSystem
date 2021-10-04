@@ -16,6 +16,8 @@ public class Register : MonoBehaviour
     public InputField age;
     public Button playbutton;
     public GameObject warning1;
+    public GameObject scroll;
+
 
     void Start()
     {
@@ -33,6 +35,7 @@ public class Register : MonoBehaviour
         else
         {
             warning1.SetActive(true);
+            scroll.transform.localPosition = new Vector3(0f, -425f, 0);
         }
     }
 }
