@@ -33,7 +33,7 @@ public class Web : MonoBehaviour
                     main.Instance.Displaywarn.ExitWarns();
                     Debug.Log(username);
                     main.Instance.Displaywarn.code();
-                    SceneManager.LoadScene("Game");
+                    SceneManager.LoadScene("Level1_LP");
                 }
 
                 if (www.downloadHandler.text == "1")
@@ -83,7 +83,7 @@ public class Web : MonoBehaviour
                 else
                 {
                     main.Instance.Displaywarn.code();
-                    SceneManager.LoadScene("Game");
+                    SceneManager.LoadScene("Level1_LP");
                 }
             }
 

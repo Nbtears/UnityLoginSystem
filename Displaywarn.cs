@@ -38,7 +38,7 @@ public class Displaywarn : MonoBehaviour
     {
         var psi = new ProcessStartInfo();
         psi.FileName =@"D:/diana/Python/python.exe";
-        var script = @"D:\diana\Documents\Modular\Interfaz\Log in\Assets\Scripts\Control_python.py";
+        var script = @"D:\diana\Documents\Modular\Python_part\Control.py";
         psi.Arguments = $"\"{script}\"";
         psi.UseShellExecute = false;
         psi.CreateNoWindow = true;
