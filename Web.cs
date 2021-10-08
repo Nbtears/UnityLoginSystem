@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine.Networking;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Web : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class Web : MonoBehaviour
                 {
                     main.Instance.Displaywarn.ExitWarns();
                     Debug.Log(username);
+                    main.Instance.Displaywarn.code();
+                    SceneManager.LoadScene("Game");
                 }
 
                 if (www.downloadHandler.text == "1")
@@ -76,6 +79,11 @@ public class Web : MonoBehaviour
                 if (www.downloadHandler.text == "1")
                 {
                     main.Instance.Displaywarn.Usertaken();
+                }
+                else
+                {
+                    main.Instance.Displaywarn.code();
+                    SceneManager.LoadScene("Game");
                 }
             }
 

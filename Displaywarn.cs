@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Diagnostics;
 
 public class Displaywarn : MonoBehaviour
 {
@@ -31,4 +33,20 @@ public class Displaywarn : MonoBehaviour
         passwarn.SetActive(false);
         takenwarn.SetActive(false);
     }
+
+    public void code()
+    {
+        var psi = new ProcessStartInfo();
+        psi.FileName =@"D:/diana/Python/python.exe";
+        var script = @"D:\diana\Documents\Modular\Interfaz\Log in\Assets\Scripts\Control_python.py";
+        psi.Arguments = $"\"{script}\"";
+        psi.UseShellExecute = false;
+        psi.CreateNoWindow = true;
+
+        using (var process= Process.Start(psi))
+        {
+
+        }
+    }
 }
+   
