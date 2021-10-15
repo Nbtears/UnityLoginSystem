@@ -17,7 +17,7 @@ public class Web : MonoBehaviour
         form.AddField("loginUser",username);
         form.AddField("loginPass", password);
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/UnityAxo/login.php", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://savetheaxo.ddns.net/UnityAxo/login.php", form))
         {
             yield return www.SendWebRequest();
 
@@ -33,6 +33,7 @@ public class Web : MonoBehaviour
                     main.Instance.Displaywarn.ExitWarns();
                     Debug.Log(username);
                     main.Instance.Displaywarn.code();
+                    main.Instance.Userinfo.Setinfo(username, password);
                     SceneManager.LoadScene("Level1_LP");
                 }
 
@@ -52,6 +53,7 @@ public class Web : MonoBehaviour
         }
     }
 
+
     public IEnumerator Register(string username,string password,string name,string lastname,string arm, string injury,string clinic, string age)
     {
         WWWForm form = new WWWForm();
@@ -64,7 +66,7 @@ public class Web : MonoBehaviour
         form.AddField("clinicuser", clinic);
         form.AddField("ageuser", age);
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/UnityAxo/register.php", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://savetheaxo.ddns.net/UnityAxo/register.php", form))
         {
             yield return www.SendWebRequest();
 
@@ -78,12 +80,15 @@ public class Web : MonoBehaviour
                 Debug.Log(www.downloadHandler.text);
                 if (www.downloadHandler.text == "1")
                 {
+                    main.Instance.Displaywarn.ExitWarns();
                     main.Instance.Displaywarn.Usertaken();
                 }
                 else
                 {
                     main.Instance.Displaywarn.code();
+                    main.Instance.Userinfo.Setinfo(username, password);
                     SceneManager.LoadScene("Level1_LP");
+
                 }
             }
 

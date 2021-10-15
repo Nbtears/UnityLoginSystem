@@ -10,6 +10,7 @@ public class Displaywarn : MonoBehaviour
     public GameObject passwarn;
     public GameObject takenwarn;
     public GameObject scroll;
+    public string user = "Dozen";
 
     public void LogUsearWarn()
     {

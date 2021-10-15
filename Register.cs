@@ -29,11 +29,13 @@ public class Register : MonoBehaviour
         if (PassInput.text == confirmPass.text)
         {
             warning1.SetActive(false);
+            main.Instance.Displaywarn.ExitWarns();
             StartCoroutine(main.Instance.Web.Register(UserInput.text, PassInput.text,nameuser.text,lastname.text,arm.options[arm.value].text,injury.text,clinic.text,age.text));
 
         }
         else
         {
+            main.Instance.Displaywarn.ExitWarns();
             warning1.SetActive(true);
             scroll.transform.localPosition = new Vector3(0f, -425f, 0);
         }
