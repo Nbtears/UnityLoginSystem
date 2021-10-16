@@ -27,7 +27,11 @@ public class AsignarValores : MonoBehaviour
 
     void more()
     {
-        Debug.Log(main.Instance.Userinfo.Username);
+        string username = main.Instance.Userinfo.Username;
+        Debug.Log(username);
+        string url = "http://savetheaxo.ddns.net/Data/user.php?user=" + username;
+        Application.OpenURL(url);
+        
     }
 }
 

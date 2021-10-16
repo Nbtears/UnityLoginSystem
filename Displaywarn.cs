@@ -38,8 +38,8 @@ public class Displaywarn : MonoBehaviour
     public void code()
     {
         var psi = new ProcessStartInfo();
-        psi.FileName =@"D:/diana/Python/python.exe";
-        var script = @"D:\diana\Documents\Modular\Python_part\Control.py";
+        psi.FileName = @"D:/diana/Python/python.exe";
+        var script = @"D:\diana\Documents\Modular\Python_part\CRUZ_n.py";
         psi.Arguments = $"\"{script}\"";
         psi.UseShellExecute = false;
         psi.CreateNoWindow = true;
