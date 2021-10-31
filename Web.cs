@@ -53,6 +53,26 @@ public class Web : MonoBehaviour
         }
     }
 
+    IEnumerator Score()
+    {
+        using (UnityWebRequest www = UnityWebRequest.Get("http://savetheaxo.ddns.net/UnityAxo/score.php"))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+               Debug.Log(www.downloadHandler.text);
+                string jsonArray = www.downloadHandler.text;
+               //Call callback fucntion to pass results
+
+            }
+
+        }
+    }
 
     public IEnumerator Register(string username,string password,string name,string lastname,string arm, string injury,string clinic, string age)
     {
