@@ -11,6 +11,8 @@ public class Login : MonoBehaviour
     public Button Signbutton;
     public GameObject sign;
     public GameObject actual;
+    public Dropdown time;
+    string duration;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +20,9 @@ public class Login : MonoBehaviour
         Signbutton.onClick.AddListener(activate);
         Logbutton.onClick.AddListener(() =>
         {
-            StartCoroutine(main.Instance.Web.Login(UserInput.text, PassInput.text));
+            string s = time.options[time.value].text;
+            duration = s.Split(' ')[0];
+            StartCoroutine(main.Instance.Web.Login(UserInput.text, PassInput.text,duration));
         });
     }
 

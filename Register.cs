@@ -17,6 +17,9 @@ public class Register : MonoBehaviour
     public Button playbutton;
     public GameObject warning1;
     public GameObject scroll;
+    public Dropdown time;
+    string duration;
+
 
 
     void Start()
@@ -30,7 +33,9 @@ public class Register : MonoBehaviour
         {
             warning1.SetActive(false);
             main.Instance.Displaywarn.ExitWarns();
-            StartCoroutine(main.Instance.Web.Register(UserInput.text, PassInput.text,nameuser.text,lastname.text,arm.options[arm.value].text,injury.text,clinic.text,age.text));
+            string s = time.options[time.value].text;
+            duration = s.Split(' ')[0];
+            StartCoroutine(main.Instance.Web.Register(UserInput.text, PassInput.text,nameuser.text,lastname.text,arm.options[arm.value].text,injury.text,clinic.text,age.text,duration));
 
         }
         else

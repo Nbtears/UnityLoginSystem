@@ -11,11 +11,12 @@ public class Web : MonoBehaviour
         //StartCoroutine(Register("Singer","dia123","Pablo","Real","R","x","Clinica 1",54));
     }
 
-    public IEnumerator Login(string username, string password)
+    public IEnumerator Login(string username, string password,string time)
     {
         WWWForm form = new WWWForm();
         form.AddField("loginUser",username);
         form.AddField("loginPass", password);
+        form.AddField("loginTime", time);
 
         using (UnityWebRequest www = UnityWebRequest.Post("http://savetheaxo.ddns.net/UnityAxo/login.php", form))
         {
@@ -53,7 +54,7 @@ public class Web : MonoBehaviour
         }
     }
 
-    IEnumerator Score()
+    public IEnumerator Score(System.Action<string> callback)
     {
         using (UnityWebRequest www = UnityWebRequest.Get("http://savetheaxo.ddns.net/UnityAxo/score.php"))
         {
@@ -67,14 +68,16 @@ public class Web : MonoBehaviour
             {
                Debug.Log(www.downloadHandler.text);
                 string jsonArray = www.downloadHandler.text;
-               //Call callback fucntion to pass results
+
+                //Call callback fucntion to pass results
+                callback(jsonArray);
 
             }
 
         }
     }
 
-    public IEnumerator Register(string username,string password,string name,string lastname,string arm, string injury,string clinic, string age)
+    public IEnumerator Register(string username,string password,string name,string lastname,string arm, string injury,string clinic, string age,string time)
     {
         WWWForm form = new WWWForm();
         form.AddField("loginUser", username);
@@ -85,6 +88,7 @@ public class Web : MonoBehaviour
         form.AddField("injuryuser", injury);
         form.AddField("clinicuser", clinic);
         form.AddField("ageuser", age);
+        form.AddField("loginTime", time);
 
         using (UnityWebRequest www = UnityWebRequest.Post("http://savetheaxo.ddns.net/UnityAxo/register.php", form))
         {

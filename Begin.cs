@@ -11,6 +11,7 @@ public class Begin : MonoBehaviour
     public GameObject sceneReg;
     public GameObject actualscene;
 
+
     // Start is called before the first frame update
     void Start()
     {

@@ -37,14 +37,14 @@ public class Displaywarn : MonoBehaviour
 
     public void code()
     {
-        var psi = new ProcessStartInfo();
-        psi.FileName = @"C:\Users\Edith\AppData\Local\Programs\Python\Python39\python.exe";
-        var script = @"D:\ESCRITORIOO\MODULAR\ConSupinacion_basecorrecta.py";
-        psi.Arguments = $"\"{script}\"";
-        psi.UseShellExecute = false;
-        psi.CreateNoWindow = true;
+        //var psi = new ProcessStartInfo();
+        //psi.FileName = @"C:\Users\Edith\AppData\Local\Programs\Python\Python39\python.exe";
+        //var script = @"D:\ESCRITORIOO\MODULAR\ConSupinacion_basecorrecta.py";
+        //psi.Arguments = $"\"{script}\"";
+        //psi.UseShellExecute = false;
+        //psi.CreateNoWindow = true;
 
-        using (var process= Process.Start(psi))
+        //using (var process= Process.Start(psi))
         {
 
         }

@@ -8,8 +8,7 @@ using System.Web;
 
 public class AsignarValores : MonoBehaviour
 {
-    private int txt;
-    private string x;
+    
     public Text repfe;
     public Text repsp;
     public Button morebutton;
@@ -17,11 +16,9 @@ public class AsignarValores : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //txt = (int)(HealthBar.CurrentPorcentaje * 100f);
-        //puntajetxt.text = txt.ToString()+"%";
+        
         repfe.text= AstronautMovement.fe.ToString();
         repsp.text = AstronautMovement.sp.ToString();
-        //reptext.text = AstronautMovement.rep.ToString();
         morebutton.onClick.AddListener(more);
 
 
